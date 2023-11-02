@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { User } from "../types/User";
-import { updateUser } from "../utils/updateUser";
 
 interface UserListProps {
   users: User[];
@@ -55,7 +54,7 @@ const UserList: React.FC<UserListProps> = ({
       <tbody>
         {users.map((user) => (
           <tr key={user.id}>
-            <td>
+            <td data-label="Namn">
               <input
                 type="text"
                 value={
@@ -69,7 +68,7 @@ const UserList: React.FC<UserListProps> = ({
                 disabled={!isEditing(user)}
               />
             </td>
-            <td>
+            <td data-label="E-post">
               <input
                 type="email"
                 value={
@@ -83,7 +82,8 @@ const UserList: React.FC<UserListProps> = ({
                 disabled={!isEditing(user)}
               />
             </td>
-            <td>
+            
+            <td data-label="Datum">
               <input
                 type="date"
                 value={
@@ -100,11 +100,11 @@ const UserList: React.FC<UserListProps> = ({
               />
             </td>
 
-            <td>
+            <td className="button-container">
               <button onClick={() => handleEditClick(user.id)}>
                 {isEditing(user) ? "Uppdatera" : "Redigera"}
               </button>
-              <button onClick={() => onDeleteUser && onDeleteUser(user.id)}>
+              <button className="delete-button" onClick={() => onDeleteUser && onDeleteUser(user.id)}>
                 Ta bort
               </button>
             </td>

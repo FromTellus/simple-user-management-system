@@ -69,7 +69,7 @@ const App: React.FC = () => {
   return (
     <div className="centered-container">
       {error && <p className="error-message">{error}</p>}{" "}
-      <button onClick={() => setUsePlaceholderData(!usePlaceholderData)}>
+      <button className="toggle-button" onClick={() => setUsePlaceholderData(!usePlaceholderData)}>
         Toggle {usePlaceholderData ? "Database Mode" : "Placeholder Mode"}
       </button>
       <UserForm

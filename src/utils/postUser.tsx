@@ -1,4 +1,3 @@
-
 import { User } from "../types/User";
 
 export const addUser = async (user: Omit<User, "id">): Promise<User> => {

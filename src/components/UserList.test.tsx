@@ -1,10 +1,7 @@
-import React from "react";
 import {
   render,
   fireEvent,
   screen,
-  getByDisplayValue,
-  getAllByText,
 } from "@testing-library/react";
 import UserList from "./UserList"; 
 

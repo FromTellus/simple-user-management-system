@@ -1,4 +1,4 @@
-import { getUsers } from "./getUsers"; //
+import { getUsers } from "./getUsers";
 import { User } from "../types/User";
 
 global.fetch = jest.fn();
